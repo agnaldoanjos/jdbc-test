@@ -1,2 +1,2 @@
 # jdbc-test
-Testes de acesso a banco
+Source code sample of database access.
