@@ -1,14 +1,18 @@
-package com.home.examples;
+package br.home.jdbc.demojdbc.config;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.util.StringUtils;
 
 import javax.sql.DataSource;
 
 @Configuration
-public class SpringJdbcConfig {
+@AllArgsConstructor
+public class AppConfiguration {
 
     @Value("${spring.datasource.url}")
     private String url;
@@ -36,15 +40,4 @@ public class SpringJdbcConfig {
 
         return dataSource;
     }
-
-//    @Bean
-//    public DataSource mysqlDataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("org.postgresql.Driver");
-//        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
-//        dataSource.setUsername("postgres");
-//        dataSource.setPassword("secret");
-//
-//        return dataSource;
-//    }
 }
